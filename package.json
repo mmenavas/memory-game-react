@@ -1,6 +1,6 @@
 {
   "name": "memory-game-builder",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "JS library for building memory games.",
   "repository": {
     "type": "git",
