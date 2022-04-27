@@ -13,8 +13,8 @@ export default {
 
 const Template: Story<CardProps> = (args) => <Card {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Unrevealed = Template.bind({})
+Unrevealed.args = {
   id: '1234',
   name: 'Default',
   isRevealed: false

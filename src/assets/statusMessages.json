@@ -1,0 +1,32 @@
+{
+  "firstCard": [
+    {
+      "language": "en",
+      "message": "Select a card."
+    }
+  ],
+  "nextCard": [
+    {
+      "language": "en",
+      "message": "Now select another card."
+    }
+  ],
+  "match": [
+    {
+      "language": "en",
+      "message": "Well done! Now find the next pair."
+    }
+  ],
+  "notAMatch": [
+    {
+      "language": "en",
+      "message": "No luck this time! Try again."
+    }
+  ],
+  "win": [
+    {
+      "language": "en",
+      "message": "Excellent! You found them all."
+    }
+  ]
+}

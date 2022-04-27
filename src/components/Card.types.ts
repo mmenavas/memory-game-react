@@ -1,8 +1,9 @@
 import { MouseEventHandler } from 'react'
+
 export interface CardProps {
-  id: string,
+  id?: string,
   name: string,
   image?: string,
-  isRevealed: boolean,
+  isRevealed?: boolean,
   reveal?: MouseEventHandler<HTMLElement>,
 }
