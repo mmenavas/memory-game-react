@@ -1,32 +1,29 @@
 {
-  "firstCard": [
+  "messages": [
     {
       "language": "en",
-      "message": "Select a card."
-    }
-  ],
-  "nextCard": [
+      "message": "Select a card.",
+      "type": "firstCard"
+    },
     {
       "language": "en",
-      "message": "Now select another card."
-    }
-  ],
-  "match": [
+      "message": "Now select another card.",
+      "type": "nextCard"
+    },
     {
       "language": "en",
-      "message": "Well done! Now find the next pair."
-    }
-  ],
-  "notAMatch": [
+      "message": "Well done! Now find the next pair.",
+      "type": "match"
+    },
     {
       "language": "en",
-      "message": "No luck this time! Try again."
-    }
-  ],
-  "win": [
+      "message": "No luck this time! Try again.",
+      "type": "notAMatch"
+    },
     {
       "language": "en",
-      "message": "Excellent! You found them all."
+      "message": "Excellent! You found them all.",
+      "type": "win"
     }
   ]
 }
