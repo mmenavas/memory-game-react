@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 
 import Card from '../Card'
 import MemoryGameBoard from '../MemoryGameBoard'
-import { MemoryGameBoardProps } from '../MemoryGameBoardProps.types'
+import MemoryGameBoardProps from '../MemoryGameBoardProps.types'
 
 export default {
   title: 'MemoryGameBoard',
@@ -12,27 +12,10 @@ export default {
 } as Meta<typeof Card>
 
 const Template: Story<MemoryGameBoardProps> = (args) => <MemoryGameBoard {...args} />
+const values = ['A', 'B', 'C']
+
 
 export const defaultBoard = Template.bind({})
 defaultBoard.args = {
-  cards: [
-    {
-      name: 'A'
-    },
-    {
-      name: 'B'
-    },
-    {
-      name: 'C'
-    },
-    {
-      name: 'D'
-    },
-    {
-      name: 'E'
-    },
-    {
-      name: 'F'
-    },
-  ]
+  values: values
 }

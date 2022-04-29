@@ -3,23 +3,11 @@ import React, { FC } from 'react'
 import { CardProps } from './Card.types'
 import './Cards.css'
 
-
-const Card: FC<CardProps> = (props) => {
-  const {
-    name,
-    image = '',
-    isRevealed = false,
-    reveal = undefined
-  } = props
-
-
+const Card: FC<CardProps> = ({ tile, reveal }) => {
   return (
-    <div className={'card' + (isRevealed
-      ? ' card--revealed'
-      : '')}
-    onClick={reveal}>
-      {isRevealed
-        ? (image ? <img className="card__image" src={image} alt="" /> : <span>{name}</span>)
+    <div className={'card' + (tile.isRevealed ? ' card--revealed' : '')} onClick={reveal}>
+      {tile.isRevealed
+        ? <span>{tile.value}</span>
         : '?'}
     </div>
   )

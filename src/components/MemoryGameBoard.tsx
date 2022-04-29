@@ -1,57 +1,34 @@
 import React, { FC, useState, useEffect } from 'react'
-import shuffle from 'lodash/fp/shuffle'
 import cloneDeep from 'lodash/fp/cloneDeep'
-import isEmpty from 'lodash/isEmpty'
-import { MemoryGameBoardProps } from './MemoryGameBoardProps.types'
-import { StatusMessageProvider } from '../models/StatusMessageProvider'
+import MemoryGameBoardProps from './MemoryGameBoardProps.types'
+import FlipATileMemoryGame from '../models/FlipATileMemoryGame'
 import Card from './Card'
-import { CardProps } from './Card.types'
-import statusMessages from '../assets/statusMessages.json'
+import Tile from '../models/Tile'
 
-const defaultEessageProvider = Object.assign(new StatusMessageProvider(), statusMessages)
+// const defaultEessageProvider = Object.assign(new StatusMessageProvider(), statusMessages)
 
-const MemoryGameBoard: FC<MemoryGameBoardProps> = (props) => {
+const MemoryGameBoard: FC<MemoryGameBoardProps> = ({ values }) => {
 
-  const {
-    name,
-    cards,
-    messages = defaultEessageProvider,
-    language = 'en'
-  } = props
-
-  const [deck, setDeck] = useState<CardProps[]>([])
-  const [selectedCardIndex, setSelectedCardIndex] = useState<number>(-1)
-  const [isDeckLocked, setIsDeckLocked] = useState<boolean>(false)
-  const [matchCount, setMatchCount] = useState<number>(0)
-  const [message, setMessage] = useState<string>('')
+  const [game, setGame] = useState(new FlipATileMemoryGame([]))
 
   useEffect(() => {
-    if (isEmpty(deck)) {
-      // Shuffle all the cards.
-      const shuffledDeck = shuffle([...cards, ...cloneDeep(cards)])
-      setDeck(shuffledDeck)
-    }
-  })
+    const tiles = values.map(value => new Tile(value))
+    const newGame = new FlipATileMemoryGame(tiles)
+    newGame.shuffle()
+    setGame(newGame)
+  }, [values])
 
-  function handleCardClick(index: number): void {
-    if (isDeckLocked) {
-      return
-    }
+  function handleCardClick(tile: Tile): void {
+    tile.reveal()
+    setGame(cloneDeep(game))
+    console.log('Clicked on card ' + tile.value)
 
-    if (deck[index].isRevealed) {
-      return
-    }
-
-    const clonedDeck = cloneDeep(deck)
-    clonedDeck[index].isRevealed = true
-    setDeck(clonedDeck)
-    deck.play(index)
   }
 
   return (
     <div className='MemoryGameBoard'>
-      {deck.map((card, index) => {
-        return <Card key={index} {...card} reveal={() => handleCardClick(index)}></Card>
+      {game.tiles.map((tile, index) => {
+        return <Card key={index} tile={tile} reveal={() => handleCardClick(tile)}></Card>
       })}
     </div>
   )

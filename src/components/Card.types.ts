@@ -1,9 +1,7 @@
 import { MouseEventHandler } from 'react'
+import Tile from '../models/Tile'
 
 export interface CardProps {
-  id?: string,
-  name: string,
-  image?: string,
-  isRevealed?: boolean,
-  reveal?: MouseEventHandler<HTMLElement>,
+  tile: Tile,
+  reveal?: MouseEventHandler<HTMLElement>
 }

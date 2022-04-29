@@ -1,5 +1,6 @@
 import Tile from '../Tile'
 import FlipATileMemoryGame from '../FlipATileMemoryGame'
+import { compareTiles } from '../../utils/helpers'
 
 describe('Test Tile class', () => {
 
@@ -30,11 +31,8 @@ describe('Test Tile class', () => {
     const tile1 = new Tile('A')
     const tile2 = new Tile('B')
     const game = new FlipATileMemoryGame([tile1, tile2])
-    console.log(game.toString())
     game.shuffle()
-    console.log(game.toString())
-    expect(game.tiles.length).toEqual(4)
+    expect(game.tiles.sort(compareTiles)).toEqual([tile1, tile2, tile1, tile2].sort(compareTiles))
   })
-
 
 })
