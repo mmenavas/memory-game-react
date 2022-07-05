@@ -1,0 +1,100 @@
+{
+  "messages": [
+    {
+      "language": "en",
+      "message": "Start playing by selecting your first card.",
+      "type": "status",
+      "code": "startGame"
+    },
+    {
+      "language": "en",
+      "message": "Select a card.",
+      "type": "status",
+      "code": "startTurn"
+    },
+    {
+      "language": "en",
+      "message": "Now select another card.",
+      "type": "status",
+      "code": "firstTileRevealed"
+    },
+    {
+      "language": "en",
+      "message": "Well done! Now find the next pair. Select a card.",
+      "type": "status",
+      "code": "match"
+    },
+    {
+      "language": "en",
+      "message": "No luck this time! Try again.",
+      "type": "status",
+      "code": "notAMatch"
+    },
+    {
+      "language": "en",
+      "message": "Excellent! You found them all.",
+      "type": "status",
+      "code": "allTilesRevealed"
+    },
+    {
+      "language": "en",
+      "message": "The game is over. Restart the game to play again.",
+      "type": "error",
+      "code": "gameOverError"
+    },
+    {
+      "language": "en",
+      "message": "That card is already revealed. Select a different card.",
+      "type": "error",
+      "code": "tileAlreadyRevealedError"
+    },
+    {
+      "language": "es",
+      "message": "Comienza esta partida seleccionando una carta.",
+      "type": "status",
+      "code": "startGame"
+    },
+    {
+      "language": "es",
+      "message": "Selecciona una carta.",
+      "type": "status",
+      "code": "startTurn"
+    },
+    {
+      "language": "es",
+      "message": "Ahora selecciona otra.",
+      "type": "status",
+      "code": "firstTileRevealed"
+    },
+    {
+      "language": "es",
+      "message": "¡Muy bien! Ahora encuentra otro par de cartas iguales.",
+      "type": "status",
+      "code": "match"
+    },
+    {
+      "language": "es",
+      "message": "¡Que lástima! Inténtalo denuevo.",
+      "type": "status",
+      "code": "notAMatch"
+    },
+    {
+      "language": "es",
+      "message": "¡Excelente! Encontraste todas los pares. La partida se acabó.",
+      "type": "status",
+      "code": "allTilesRevealed"
+    },
+    {
+      "language": "es",
+      "message": "Esta partida ya terminó. Reanuda el juego para comenzar una nueva.",
+      "type": "error",
+      "code": "gameOverError"
+    },
+    {
+      "language": "es",
+      "message": "Esa carta ya está abierta. Selecciona otra.",
+      "type": "error",
+      "code": "tileAlreadyRevealedError"
+    }
+  ]
+}

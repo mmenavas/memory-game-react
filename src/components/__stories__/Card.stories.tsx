@@ -1,9 +1,8 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
+import { Tile } from '@mmenavas/memory-game-builder'
 
-import Card from '../Card'
-import { CardProps } from '../Card.types'
-import Tile from '../../models/Tile'
+import { Card, CardProps } from '../Card'
 
 export default {
   title: 'Card',

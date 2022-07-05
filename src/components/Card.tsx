@@ -1,9 +1,14 @@
 import React, { FC } from 'react'
-
-import { CardProps } from './Card.types'
+import { MouseEventHandler } from 'react'
+import { Tile } from '@mmenavas/memory-game-builder'
 import './Cards.css'
 
-const Card: FC<CardProps> = ({ tile, reveal }) => {
+export interface CardProps {
+  tile: Tile<string>,
+  reveal?: MouseEventHandler<HTMLElement>
+}
+
+export const Card: FC<CardProps> = ({ tile, reveal }) => {
   return (
     <div className={'card' + (tile.isRevealed ? ' card--revealed' : '')} onClick={reveal}>
       {tile.isRevealed
@@ -12,5 +17,3 @@ const Card: FC<CardProps> = ({ tile, reveal }) => {
     </div>
   )
 }
-
-export default Card

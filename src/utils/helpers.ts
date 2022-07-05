@@ -1,6 +1,6 @@
-import Tile from '../models/Tile'
+import { Tile } from '@mmenavas/memory-game-builder'
 
-function compareTiles(a: Tile, b: Tile): number {
+function compareTiles(a: Tile<string>, b: Tile<string>): number {
   const nameA = a.value.toUpperCase()
   const nameB = b.value.toUpperCase()
   if (nameA < nameB) {
