@@ -1,15 +1,13 @@
 {
-  "name": "memory-game-builder",
-  "version": "0.1.1",
-  "description": "JS library for building memory games.",
+  "name": "@mmenavas/memory-game-react",
+  "version": "0.2.0",
+  "description": "A react component for rendering a flip-a-tile type of game.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmenavas/memory-game-builder.git"
+    "url": "git+https://github.com/mmenavas/memory-game-react.git"
   },
   "keywords": [
     "educational",
-    "children",
-    "kids",
     "brain",
     "mental",
     "exercise",
@@ -18,9 +16,9 @@
   "author": "Maximo Mena",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mmenavas/memory-game-builder/issues"
+    "url": "https://github.com/mmenavas/memory-game-react/issues"
   },
-  "homepage": "https://github.com/mmenavas/memory-game-builder#readme",
+  "homepage": "https://github.com/mmenavas/memory-game-react#readme",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
@@ -33,7 +31,9 @@
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@mmenavas/memory-game-builder": "^0.2.0",
     "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
     "@rollup/plugin-typescript": "^8.3.2",
     "@storybook/addon-actions": "^6.4.22",
@@ -57,14 +57,15 @@
     "eslint-plugin-react": "^7.29.4",
     "jest": "^27.5.1",
     "lodash": "^4.17.21",
+    "postcss": "^8.4.14",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "rollup": "^2.70.2",
     "rollup-plugin-dts": "^4.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "ts-jest": "^27.1.4",
-    "typescript": "^4.6.3",
-    "@mmenavas/memory-game-builder": "^0.2.0"
+    "typescript": "^4.6.3"
   }
 }
