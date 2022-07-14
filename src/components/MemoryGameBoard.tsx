@@ -27,9 +27,11 @@ export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({ values, language = '
 
   function handleCardClick(index: number): void {
     try {
-      const msg = game.play(index)
+      const msg = game.play(index).then(result => {
+        setGame(cloneDeep(game))
+        setMessage(messageProvider.findMessage(result as MessageCode, language))
+      })
       setGame(cloneDeep(game))
-      setMessage(messageProvider.findMessage(msg as MessageCode, language))
     }
     catch (e: unknown) {
       if (e === 'gameOverError' || e === 'tileAlreadyRevealedError') {
