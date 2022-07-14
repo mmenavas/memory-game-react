@@ -1,6 +1,6 @@
 {
   "name": "@mmenavas/memory-game-react",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A react component for rendering a flip-a-tile type of game.",
   "repository": {
     "type": "git",

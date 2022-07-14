@@ -78,3 +78,9 @@ customMessageProvider.args = {
   values: values,
   messageProvider: new MessageProvider(customMessages as Message[])
 }
+export const slowConceal = Template.bind({})
+slowConceal.args = {
+  values: values,
+  language: 'en',
+  timeoutDuration: 2000
+}

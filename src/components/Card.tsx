@@ -1,19 +1,18 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 import { MouseEventHandler } from 'react'
 import { Tile } from '@mmenavas/memory-game-builder'
 import './Cards.css'
 
 export interface CardProps {
-  tile: Tile<string>,
+  children?: ReactNode
+  tile: Tile<ReactNode>
   reveal?: MouseEventHandler<HTMLElement>
 }
 
-export const Card: FC<CardProps> = ({ tile, reveal }) => {
+export const Card: FC<CardProps> = ({ children, tile, reveal, }) => {
   return (
     <div className={'card' + (tile.isRevealed ? ' card--revealed' : '')} onClick={reveal}>
-      {tile.isRevealed
-        ? <span>{tile.value}</span>
-        : '?'}
+      { children }
     </div>
   )
 }
