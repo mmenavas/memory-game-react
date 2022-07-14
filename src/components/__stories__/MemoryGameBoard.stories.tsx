@@ -86,7 +86,7 @@ slowConceal.args = {
 export const customTiles = Template.bind({})
 customTiles.args = {
   values: values,
-  TileNode: (props) => <h2>{ props.tile.value }</h2>,
+  TileNode: ({value}) => <h2>{ value }</h2>,
   ConcealedTileNode: () => <div>??</div>,
   language: 'en'
 }

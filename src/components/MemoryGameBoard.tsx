@@ -36,7 +36,7 @@ export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({
 
   function renderTile(tile: Tile<string>) {
     if (tile.isRevealed) {
-      return TileNode ? <TileNode tile={tile} /> : tile.value
+      return TileNode ? <TileNode value={tile.value} /> : tile.value
     }
     else {
       return ConcealedTileNode ? <ConcealedTileNode /> : '?'
