@@ -1,19 +1,22 @@
 import React, { FC, useState, useEffect } from 'react'
 import cloneDeep from 'lodash/fp/cloneDeep'
 import { Tile, Board, FlipATileGame } from '@mmenavas/memory-game-builder'
-import { Card } from './Card'
 import {MessageProvider, LanguageCode, MessageCode, Message} from '../services/MessageProvider'
 import defaultMessages from '../assets/defaultMessages.json'
 
 export interface MemoryGameBoardProps {
   values: string[]
+  TileNode: typeof React.Component
+  ConcealedTileNode: typeof React.Component
   language: LanguageCode
   messageProvider: MessageProvider
   timeoutDuration: number
 }
 
-export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({ 
+export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({
   values,
+  TileNode,
+  ConcealedTileNode,
   language = 'en',
   messageProvider = new MessageProvider(defaultMessages.messages as Message[]),
   timeoutDuration = 500
@@ -30,6 +33,15 @@ export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({
     setGame(newGame)
     setMessage(messageProvider.findMessage('startGame', language))
   }, [values])
+
+  function renderTile(tile: Tile<string>) {
+    if (tile.isRevealed) {
+      return TileNode ? <TileNode tile={tile} /> : tile.value
+    }
+    else {
+      return ConcealedTileNode ? <ConcealedTileNode /> : '?'
+    }
+  }
 
   function handleCardClick(index: number): void {
     try {
@@ -51,9 +63,13 @@ export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({
 
   return (
     <div className='MemoryGameBoard'>
-      <div className='MemoryGameBoard__cards'>
+      <div className='MemoryGameBoard__tiles'>
         {game.board.tiles.map((tile, index) => {
-          return <Card key={index} tile={tile} reveal={() => handleCardClick(index)}><div className='Card__content'>{tile.isRevealed ? tile.value : '?' }</div></Card>
+          return (
+            <div key={index} onClick={() => handleCardClick(index)} className={'MemoryGameBoard__tile}' + (tile.isRevealed ? 'revealed' : 'concealed')}>
+              <div className='MemoryGameBoard__tile-content'>{ renderTile(tile) }</div>
+            </div>
+          )
         })}
       </div>
       <div className='MemoryGame__message'>{message}</div>

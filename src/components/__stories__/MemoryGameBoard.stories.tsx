@@ -1,6 +1,5 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-
 import { Card } from '../Card'
 import { MemoryGameBoard, MemoryGameBoardProps } from '../MemoryGameBoard'
 import { Message, MessageProvider } from '../../services/MessageProvider'
@@ -9,7 +8,7 @@ export default {
   title: 'MemoryGameBoard',
   component: MemoryGameBoard,
   argTypes: {},
-} as Meta<typeof Card>
+} as Meta<typeof MemoryGameBoard>
 
 const Template: Story<MemoryGameBoardProps> = (args) => <MemoryGameBoard {...args} />
 const values = ['A', 'B', 'C', 'D']
@@ -83,4 +82,11 @@ slowConceal.args = {
   values: values,
   language: 'en',
   timeoutDuration: 2000
+}
+export const customTiles = Template.bind({})
+customTiles.args = {
+  values: values,
+  TileNode: (props) => <h2>{ props.tile.value }</h2>,
+  ConcealedTileNode: () => <div>??</div>,
+  language: 'en'
 }
