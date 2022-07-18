@@ -1,6 +1,5 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Card } from '../Card'
 import { MemoryGameBoard, MemoryGameBoardProps } from '../MemoryGameBoard'
 import { Message, MessageProvider } from '../../services/MessageProvider'
 
@@ -84,9 +83,10 @@ slowConceal.args = {
   timeoutDuration: 2000
 }
 export const customTiles = Template.bind({})
+const customTileComponent = ({value}) => (<h2>{ value }</h2>)
 customTiles.args = {
   values: values,
-  TileNode: ({value}) => <h2>{ value }</h2>,
+  TileNode: customTileComponent,
   ConcealedTileNode: () => <div>??</div>,
   language: 'en'
 }
