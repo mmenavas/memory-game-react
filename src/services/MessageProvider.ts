@@ -1,5 +1,5 @@
 export type LanguageCode = 'en' | 'es'
-export type MessageCode = 'startGame' | 'startTurn' | 'firstTileRevealed' | 'match' | 'notAMatch' | 'allTilesRevealed' | 'gameOverError' | 'tileAlreadyRevealedError'
+export type MessageCode = 'startGame' | 'startTurn' | 'firstTileRevealed' | 'match' | 'notAMatch' | 'allTilesRevealed' | 'gameOverError' | 'tileAlreadyRevealedError' | 'mistakes'
 export type MessageType = 'status' | 'warning' | 'error'
 export type Message = {
   language: LanguageCode

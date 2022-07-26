@@ -10,7 +10,9 @@ export default {
 } as Meta<typeof MemoryGameBoard>
 
 const Template: Story<MemoryGameBoardProps> = (args) => <MemoryGameBoard {...args} />
-const values = ['A', 'B', 'C', 'D']
+const values = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+const valuesFew = ['A', 'B', 'C', 'D']
+const valuesMany = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
 
 export const defaultBoard = Template.bind({})
 defaultBoard.args = {
@@ -83,10 +85,24 @@ slowConceal.args = {
   timeoutDuration: 2000
 }
 export const customTiles = Template.bind({})
-const customTileComponent = ({value}) => (<h2>{ value }</h2>)
+const customTileComponent = ({value}) => (<>{ value }</>)
 customTiles.args = {
   values: values,
   TileNode: customTileComponent,
-  ConcealedTileNode: () => <div>??</div>,
+  ConcealedTileNode: () => <strong>?</strong>,
+  language: 'en'
+}
+export const customTilesFew = Template.bind({})
+customTilesFew.args = {
+  values: valuesFew,
+  TileNode: customTileComponent,
+  ConcealedTileNode: () => <strong>?</strong>,
+  language: 'en'
+}
+export const customTilesMany = Template.bind({})
+customTilesMany.args = {
+  values: valuesMany,
+  TileNode: customTileComponent,
+  ConcealedTileNode: () => <strong>?</strong>,
   language: 'en'
 }

@@ -38,6 +38,12 @@
     },
     {
       "language": "en",
+      "message": "You made {mistakesCount} mistakes.",
+      "type": "statux",
+      "code": "mistakes"
+    },
+    {
+      "language": "en",
       "message": "The game is over. Restart the game to play again.",
       "type": "error",
       "code": "gameOverError"

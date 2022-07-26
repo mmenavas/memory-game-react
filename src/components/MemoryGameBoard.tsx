@@ -3,6 +3,7 @@ import cloneDeep from 'lodash/fp/cloneDeep'
 import { Tile, Board, FlipATileGame } from '@mmenavas/memory-game-builder'
 import {MessageProvider, LanguageCode, MessageCode, Message} from '../services/MessageProvider'
 import defaultMessages from '../assets/defaultMessages.json'
+import './MemoryGameBoard.css'
 
 export interface MemoryGameBoardProps {
   values: string[]
@@ -43,6 +44,11 @@ export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({
     }
   }
 
+  function getMistakesMessage() {
+    const msg = messageProvider.findMessage('mistakes', language)
+    return msg.replace('{mistakesCount}', game.mistakes.toString())
+  }
+
   function handleCardClick(index: number): void {
     try {
       game.play(index).then(result => {
@@ -63,16 +69,19 @@ export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({
 
   return (
     <div className='MemoryGameBoard'>
+      <div className='MemoryGameBoard__messages'>
+        <p className='MemoryGameBoard__status'>{message}</p>
+        <p className='MemoryGameBoard__mistake-'>{getMistakesMessage()}</p>
+      </div>
       <div className='MemoryGameBoard__tiles'>
         {game.board.tiles.map((tile, index) => {
           return (
-            <div key={index} onClick={() => handleCardClick(index)} className={'MemoryGameBoard__tile}' + (tile.isRevealed ? 'revealed' : 'concealed')}>
+            <div key={index} onClick={() => handleCardClick(index)} className={'MemoryGameBoard__tile' + (tile.isRevealed ? ' revealed' : ' concealed')}>
               <div className='MemoryGameBoard__tile-content'>{ renderTile(tile) }</div>
             </div>
           )
         })}
       </div>
-      <div className='MemoryGame__message'>{message}</div>
     </div>
   )
 }
