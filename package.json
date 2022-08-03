@@ -1,6 +1,6 @@
 {
   "name": "@mmenavas/memory-game-react",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A react component for rendering a flip-a-tile type of game.",
   "repository": {
     "type": "git",
@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/mmenavas/memory-game-react#readme",
   "main": "dist/cjs/index.js",
+  "typings": "dist/index",
   "module": "dist/esm/index.js",
+  "files": [
+    "dist/**/*"
+  ],  
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
