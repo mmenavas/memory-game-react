@@ -7,11 +7,9 @@
     "url": "git+https://github.com/mmenavas/memory-game-react.git"
   },
   "keywords": [
-    "educational",
-    "brain",
-    "mental",
-    "exercise",
-    "workout"
+    "quizz maker",
+    "brain workout",
+    "memory exercise"    
   ],
   "author": "Maximo Mena",
   "license": "ISC",
