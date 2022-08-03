@@ -23,12 +23,12 @@ export const MemoryGameBoard: FC<MemoryGameBoardProps> = ({
   timeoutDuration = 500
 }) => {
 
-  const [game, setGame] = useState(new FlipATileGame(new Board([])))
+  const [game, setGame] = useState(new FlipATileGame<string>(new Board([])))
   const [message, setMessage] = useState('')
 
   useEffect(() => {
     const tiles = values.map(value => new Tile<string>(value))
-    const board = new Board<string>(tiles)
+    const board = new Board(tiles)
     const newGame = new FlipATileGame(board, timeoutDuration)
     newGame.startGame()
     setGame(newGame)
