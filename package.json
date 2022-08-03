@@ -1,6 +1,6 @@
 {
   "name": "@mmenavas/memory-game-react",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "A react component for rendering a flip-a-tile type of game.",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@mmenavas/memory-game-builder": "^0.4.2",
+    "@mmenavas/memory-game-builder": "^1.0.1",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
